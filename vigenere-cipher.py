@@ -20,16 +20,7 @@ def main():
 
             # Checks that plaintext char is a letter
             if i.isalpha():
-                print(
-                    "Letter is: ",
-                    i,
-                    " char is: ",
-                    ord(i) - 97,
-                    "keyword is: ",
-                    keyword[keyword_letter],
-                )
                 final_string += table[ord(i) - 97][ord(keyword[keyword_letter]) - 97]
-                print("Current string ", final_string)
 
             elif i.isnumeric():
                 final_string += i
@@ -43,7 +34,6 @@ def main():
 
 # Creates the 2D table used by the Vigenere cipher
 def createTable():
-    print("Creating table")
     table = [l[i:] + l[:i] for i in range(len(l))]
     return table
 
